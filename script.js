@@ -14,7 +14,7 @@ Dog.prototype = Object.create(Animal.prototype);
 Dog.prototype.constructor = Dog;
 
 Dog.prototype.voice = function() {
-	Animal.prototype.getName.apply(this);
+	//Animal.prototype.getName.apply(this);
 	console.log(this.name + ' tell: Bark');
 }
 
