@@ -1,16 +1,21 @@
-function Animal() {
+function Animal(name) {
 	this.name = name;
 }
 
-function Dog() {
-	Animal.apply(this.arguments);
+Animal.prototype.getName = function() {
+	return this.name;
+}
+
+function Dog(name) {
+	Animal.apply(this, arguments);
 }
 
 Dog.prototype = Object.create(Animal.prototype);
 Dog.prototype.constructor = Dog;
 
 Dog.prototype.voice = function() {
-	console.log('Bark');
+	Animal.prototype.getName.apply(this);
+	console.log(this.name + ' tell: Bark');
 }
 
 var Dog = new Dog('Druzhok');
