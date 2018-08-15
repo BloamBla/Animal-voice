@@ -10,7 +10,7 @@ Dog.prototype = Object.create(Animal.prototype);
 Dog.prototype.constructor = Dog;
 
 Dog.prototype.voice = function() {
-	alert('Bark');
+	console.log('Bark');
 }
 
 var Dog = new Dog('Druzhok');
